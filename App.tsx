@@ -6,12 +6,7 @@ import { WHATSAPP_LINK, DISCORD_LINK, RUNANYWHERE_REPO, FORM_LINK, HACKSS_REPO, 
 import { Terminal, Calendar, Trophy, Zap, Download, MessageCircle, Github, ExternalLink, ArrowRight, CheckCircle2, Code2, Users, Video } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  // Removed mounted check to prevent blank screen delay
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -28,8 +23,6 @@ const App: React.FC = () => {
       });
     }
   };
-
-  if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-dark-bg text-white selection:bg-nerds-lime selection:text-nerds-primary font-sans">
